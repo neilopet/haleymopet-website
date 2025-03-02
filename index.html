@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H. M. Opet | Fantasy Author</title>
+    <style>
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #f0e6e0;
+            --accent-color: #8b0000;
+            --background-color: #f8f6f4;
+            --text-color: #222;
+            --light-text: #f8f8f8;
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Lato', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-primary);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 0px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: 0px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--primary-color);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 120px;
+            height: 120px;
+            border: 1px solid var(--primary-color);
+            border-radius: 50%;
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo-text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding:.5rem 0 4rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-size: 2rem;
+        }
+        
+        /* Header */
+        header {
+            background-color: transparent;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-link {
+            margin-left: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.7rem;
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            min-height: 90vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 50%;
+            padding-right: 2rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--primary-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-image {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+        
+        /* Book Teaser */
+        .book-teaser {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* News/Blog Section */
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-post {
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-post-image {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-post-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-post-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-post-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .blog-post-date {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-family: var(--font-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+            gap: 1.5rem;
+        }
+        
+        .social-link {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-nav {
+            margin: 1.5rem 0;
+        }
+        
+        .footer-nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav-item {
+            margin: 0 1rem;
+        }
+        
+        .footer-nav-link {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            color: #777;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                min-height: auto;
+                padding: 3rem 0;
+            }
+
+            .hero-content, .hero-image {
+                max-width: 100%;
+                width: 100%;
+                padding: 0;
+            }
+
+            .hero-image img {
+                max-width: 300px;
+                margin-bottom: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--background-color);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 5rem;
+                transition: all 0.5s ease;
+                z-index: 98;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-link {
+                margin: 1.5rem 0;
+                color: var(--primary-color);
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 99;
+            }
+            
+            .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background-color: var(--primary-color);
+                transition: all 0.3s ease;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .footer-nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-nav-item {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" id="logo-link">H. M. OPET</a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#blog" class="nav-link">BLOG</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="hero-content">
+            <h1 class="hero-title">Debut Novel</h1>
+            <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
+            <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
+            <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
+        </div>
+        <div class="hero-image">
+            <img src="/api/placeholder/600/600" alt="H. M. Opet">
+        </div>
+    </section>
+
+    <div class="divider">~</div>
+
+    <!-- Book Teaser Section -->
+    <section class="section">
+        <div class="container">
+            <div class="book-teaser">
+                <p>"Magic runs in the blood, but darkness rules the soul."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About the Author</h2>
+                <div class="about-text">
+                    <p>H. M. Opet is a fantasy writer, mother, and dreamer who weaves tales of magic, intrigue, and adventure.</p>
+                    <p>By day, I'm a mother of three, a wife, and a full-time professional who has built a career I'm proud of. But by night, I lose myself in the world of magic, intrigue, and adventure.</p>
+                    <p>I've always been a lover of fantasy, drawn to rich worlds and characters that linger long after the last page. When a story took root in my mind—a tale of hidden magic, wolf shifters, and a heroine torn between duty and destiny—I knew I had to write it.</p>
+                    <p>Now, I'm bringing that world to life, and I can't wait for you to step into the shadows with me.</p>
+                    <p>Also, I'm a devoted pet lover—because every great fantasy world needs a loyal companion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">Latest News</h2>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <div class="blog-post-image" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="blog-post-content">
+                        <p class="blog-post-date">March 1, 2025</p>
+                        <h3 class="blog-post-title">Chapter 30 Complete!</h3>
+                        <p class="blog-post-excerpt">Chapter 30… DONE! And I'm still going! There's so much more swirling in my head that I need to get out and piece together for this fantasy romance...</p>
+                        <a href="#" class="btn">READ MORE</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-post-image" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="blog-post-content">
+                        <p class="blog-post-date">February 26, 2025</p>
+                        <h3 class="blog-post-title">Book Review: Crescent City</h3>
+                        <p class="blog-post-excerpt">Sarah J. Maas truly never misses! The world-building in this book is on another level—so intricate and well thought out...</p>
+                        <a href="#" class="btn">READ MORE</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-post-image" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="blog-post-content">
+                        <p class="blog-post-date">February 23, 2025</p>
+                        <h3 class="blog-post-title">Sunday Writing Session</h3>
+                        <p class="blog-post-excerpt">There's something magical about exploring different character POVs. It's my absolute favorite part of writing my regency romantasy novel...</p>
+                        <a href="#" class="btn">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <h2>Subscribe</h2>
+            <p>Sign up with your email address to receive updates on my work, character illustrations, and other bookish items.</p>
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <button type="submit" class="btn">SIGN UP</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="logo">
+                <div>H/M</div>
+            </div>
+            <div class="logo-text">H. M. Opet</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/hm.opet?igsh=Mjdza2R1aXRqeHo1" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-goodreads-g"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 H. M. Opet. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
