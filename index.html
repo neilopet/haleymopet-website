@@ -597,6 +597,62 @@
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID_PLACEHOLDER"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA4_MEASUREMENT_ID_PLACEHOLDER', {
+            // Enhanced measurement for better insights
+            page_title: true,
+            page_location: true,
+            scroll_depth_threshold: 90,
+            // Custom dimensions for book marketing
+            custom_map: {
+                'custom_parameter_1': 'book_section',
+                'custom_parameter_2': 'traffic_source_detail'
+            }
+        });
+        
+        // Enhanced ecommerce tracking for pre-orders
+        function trackPreOrder(source) {
+            gtag('event', 'purchase_intent', {
+                event_category: 'Book Pre-order',
+                event_label: source,
+                value: 1,
+                currency: 'USD',
+                items: [{
+                    item_id: 'bloodveiled-descent-preorder',
+                    item_name: 'A Bloodveiled Descent - Pre-order',
+                    item_category: 'Book',
+                    item_category2: 'Fantasy Romance',
+                    price: 4.99,
+                    quantity: 1
+                }]
+            });
+        }
+        
+        // Newsletter signup tracking
+        function trackNewsletterSignup() {
+            gtag('event', 'generate_lead', {
+                event_category: 'Newsletter',
+                event_label: 'Email Signup',
+                value: 1
+            });
+        }
+        
+        // Social media click tracking
+        function trackSocialClick(platform) {
+            gtag('event', 'click', {
+                event_category: 'Social Media',
+                event_label: platform,
+                transport_type: 'beacon'
+            });
+        }
+    </script>
+    
     <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242278621.js"></script>
 </head>
@@ -628,7 +684,7 @@
                     <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
                     <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
                     <div class="hero-buttons">
-                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon"><i class="fab fa-amazon"></i> PRE-ORDER ON KINDLE</a>
+                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPreOrder('hero_section')"><i class="fab fa-amazon"></i> PRE-ORDER ON KINDLE</a>
                         <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
                     </div>
                 </div>
@@ -652,7 +708,7 @@
                     <p class="book-series">The Solwyn Duology - Book One</p>
                     <p class="book-author">by Haley M. Opet</p>
                     <p class="book-release">Scheduled to release November 10, 2025. Kindle pre-order now available on Amazon.</p>
-                    <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon"><i class="fab fa-amazon"></i> PRE-ORDER ON KINDLE</a>
+                    <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPreOrder('featured_section')"><i class="fab fa-amazon"></i> PRE-ORDER ON KINDLE</a>
                     <div class="book-blurb">
                         <p>Evelyne Duskwood was raised to be poised, polished, and properly betrothed. But when courtly betrayal shatters her future and her younger brother begins to unravel under the weight of strange visions, Evelyne's carefully arranged life collapses—and something far darker begins to stir.</p>
                         <p>A scorched blood sigil. Whispers of a long-banished magic. A land ruled by shadows and fear.</p>
@@ -742,10 +798,10 @@
             </div>
             <div class="logo-text">Haley M. Opet</div>
             <div class="social-links">
-                <a href="https://www.instagram.com/haleym.opet" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.threads.net/@haleym.opet" class="social-link threads-icon">@</a>
-                <a href="https://www.tiktok.com/@haleymopet" class="social-link"><i class="fab fa-tiktok"></i></a>
-                <a href="https://linktr.ee/haleym.opet" class="social-link"><i class="fas fa-link"></i></a>
+                <a href="https://www.instagram.com/haleym.opet" class="social-link" onclick="trackSocialClick('Instagram')" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.threads.net/@haleym.opet" class="social-link threads-icon" onclick="trackSocialClick('Threads')" target="_blank">@</a>
+                <a href="https://www.tiktok.com/@haleymopet" class="social-link" onclick="trackSocialClick('TikTok')" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://linktr.ee/haleym.opet" class="social-link" onclick="trackSocialClick('Linktree')" target="_blank"><i class="fas fa-link"></i></a>
             </div>
             <p class="copyright">&copy; 2025 Haley M. Opet. All Rights Reserved.</p>
         </div>
@@ -790,5 +846,38 @@
     </script>
     
     <script src="instagram_loader.js"></script>
+    
+    <!-- HubSpot Form Integration with GA4 -->
+    <script>
+        // Listen for HubSpot form submissions
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit') {
+                // Track newsletter signup in GA4
+                trackNewsletterSignup();
+            }
+        });
+        
+        // Fallback: Listen for form submission events on the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Monitor for HubSpot form elements
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1 && node.querySelector && node.querySelector('form[data-hs-form]')) {
+                            const form = node.querySelector('form[data-hs-form]');
+                            form.addEventListener('submit', function() {
+                                trackNewsletterSignup();
+                            });
+                        }
+                    });
+                });
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+    </script>
 </body>
 </html>
