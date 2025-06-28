@@ -3,3 +3,12 @@ CLAUDE.md
 *.log
 capture_screenshot.py
 website-*.png
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+test_scraper.py
+test_instagram_loader.py
+venv/
+website-with-instagram-*.png
