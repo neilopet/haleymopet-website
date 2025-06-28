@@ -234,15 +234,16 @@
             border-radius: 5px;
         }
         
-        /* Book Teaser */
-        .book-teaser {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            font-style: italic;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            line-height: 1.8;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .hero-buttons .btn {
+            margin-top: 0;
         }
         
         /* Featured Book Section */
@@ -504,6 +505,16 @@
                 font-size: 1.2rem;
             }
             
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
             .nav-menu {
                 position: fixed;
                 top: 0;
@@ -616,7 +627,10 @@
                     <h1 class="hero-title">Debut Novel</h1>
                     <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
                     <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
-                    <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
+                    <div class="hero-buttons">
+                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon"><i class="fab fa-amazon"></i> PRE-ORDER ON KINDLE</a>
+                        <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="images/ABloodveiledDescent-Ebook.jpg" alt="Book cover - Debut Novel by Haley M. Opet">
@@ -647,15 +661,6 @@
                         <p>In a land where magic is buried and blood remembers, Evelyne must confront long-hidden truths about her family, her heart, and a prophecy that could reshape the world.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Book Teaser Section -->
-    <section class="section">
-        <div class="container">
-            <div class="book-teaser">
-                <p>"Magic runs in the blood, but darkness rules the soul."</p>
             </div>
         </div>
     </section>
