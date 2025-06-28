@@ -347,6 +347,36 @@
             margin-top: 3rem;
         }
         
+        .instagram-loading {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            font-style: italic;
+        }
+        
+        .instagram-embed {
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .instagram-embed iframe {
+            max-width: 100% !important;
+            min-width: 100% !important;
+        }
+        
+        /* Instagram blockquote styling */
+        .instagram-media {
+            margin: 0 !important;
+            min-width: 100% !important;
+            max-width: 100% !important;
+        }
+        
         .blog-post {
             background-color: #fff;
             border-radius: 5px;
@@ -687,35 +717,14 @@
     <!-- Blog Section -->
     <section id="blog" class="section">
         <div class="container">
-            <h2 class="section-title">Latest News</h2>
-            <div class="blog-posts">
-                <div class="blog-post">
-                    <div class="blog-post-image" style="background-image: url('/api/placeholder/400/300');"></div>
-                    <div class="blog-post-content">
-                        <p class="blog-post-date">March 1, 2025</p>
-                        <h3 class="blog-post-title">Chapter 30 Complete!</h3>
-                        <p class="blog-post-excerpt">Chapter 30… DONE! And I'm still going! There's so much more swirling in my head that I need to get out and piece together for this fantasy romance...</p>
-                        <a href="#" class="btn">READ MORE</a>
-                    </div>
+            <h2 class="section-title">Latest from Instagram</h2>
+            <div class="blog-posts" id="instagram-feed">
+                <div class="instagram-loading">
+                    <p>Loading latest posts from <a href="https://www.instagram.com/haleym.opet" target="_blank">@haleym.opet</a>...</p>
                 </div>
-                <div class="blog-post">
-                    <div class="blog-post-image" style="background-image: url('/api/placeholder/400/300');"></div>
-                    <div class="blog-post-content">
-                        <p class="blog-post-date">February 26, 2025</p>
-                        <h3 class="blog-post-title">Book Review: Crescent City</h3>
-                        <p class="blog-post-excerpt">Sarah J. Maas truly never misses! The world-building in this book is on another level—so intricate and well thought out...</p>
-                        <a href="#" class="btn">READ MORE</a>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <div class="blog-post-image" style="background-image: url('/api/placeholder/400/300');"></div>
-                    <div class="blog-post-content">
-                        <p class="blog-post-date">February 23, 2025</p>
-                        <h3 class="blog-post-title">Sunday Writing Session</h3>
-                        <p class="blog-post-excerpt">There's something magical about exploring different character POVs. It's my absolute favorite part of writing my regency romantasy novel...</p>
-                        <a href="#" class="btn">READ MORE</a>
-                    </div>
-                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.instagram.com/haleym.opet" target="_blank" class="btn">FOLLOW ON INSTAGRAM</a>
             </div>
         </div>
     </section>
@@ -786,6 +795,61 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Instagram Feed Integration
+        document.addEventListener('DOMContentLoaded', function() {
+            const instagramFeed = document.getElementById('instagram-feed');
+            
+            // Simple solution: Embed Instagram posts directly
+            // Replace these with actual Instagram embed codes from your posts
+            const instagramEmbeds = [
+                // To get embed codes:
+                // 1. Go to your Instagram post
+                // 2. Click (...) menu
+                // 3. Select "Embed"
+                // 4. Copy the embed code
+                // 5. Paste it in the quotes below
+                `<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/EXAMPLE/" data-instgrm-version="14" style="max-width:100%;"><div style="padding:16px;"><p style="color:#3897f0;">View this post on Instagram</p></div></blockquote>`,
+                // Add more embed codes here
+            ];
+            
+            if (instagramEmbeds.length > 0 && instagramEmbeds[0].includes('EXAMPLE')) {
+                // Show instructions if no real posts are added yet
+                instagramFeed.innerHTML = `
+                    <div class="instagram-loading">
+                        <p><strong>Instagram feed setup needed:</strong></p>
+                        <p>To display your Instagram posts here, you need to add embed codes.</p>
+                        <ol style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                            <li>Go to <a href="https://www.instagram.com/haleym.opet" target="_blank">your Instagram</a></li>
+                            <li>Open a post you want to display</li>
+                            <li>Click the three dots (...) menu</li>
+                            <li>Select "Embed" → "Copy embed code"</li>
+                            <li>Replace the example code in index.html</li>
+                        </ol>
+                        <p>For automatic updates, consider using a service like <a href="https://elfsight.com/instagram-feed-widget/" target="_blank">Elfsight</a> or <a href="https://lightwidget.com/" target="_blank">LightWidget</a>.</p>
+                    </div>
+                `;
+            } else {
+                // Display the Instagram embeds
+                instagramFeed.innerHTML = '';
+                instagramEmbeds.forEach(embed => {
+                    const div = document.createElement('div');
+                    div.className = 'instagram-embed';
+                    div.innerHTML = embed;
+                    instagramFeed.appendChild(div);
+                });
+                
+                // Load Instagram's embed script
+                if (!window.instgrm) {
+                    const script = document.createElement('script');
+                    script.async = true;
+                    script.src = 'https://www.instagram.com/embed.js';
+                    document.body.appendChild(script);
+                } else {
+                    window.instgrm.Embeds.process();
+                }
+            }
         });
     </script>
 </body>
