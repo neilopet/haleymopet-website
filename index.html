@@ -93,13 +93,12 @@
             margin: 0 auto;
             width: 120px;
             height: 120px;
-            border: 1px solid var(--primary-color);
-            border-radius: 50%;
-            font-family: var(--font-primary);
-            font-size: 2rem;
-            letter-spacing: 2px;
-            text-align: center;
-            padding: 20px;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .logo-text {
@@ -135,6 +134,12 @@
             top: 0;
             z-index: 100;
             padding: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: var(--background-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         .header-container {
@@ -166,14 +171,20 @@
         
         /* Hero Section */
         .hero {
+            min-height: 90vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-inner {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             text-align: left;
-            min-height: 90vh;
-            position: relative;
-            overflow: hidden;
+            gap: 3rem;
         }
         
         .hero-content {
@@ -196,15 +207,15 @@
         }
 
         .hero-image {
-            width: 50%;
-            height: 100%;
+            flex: 0 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .hero-image img {
-            max-width: 100%;
+            max-width: 400px;
+            width: 100%;
             height: auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
@@ -274,17 +285,21 @@
             margin-bottom: 1.5rem;
         }
         
-        .book-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
+        .book-release {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
         }
         
-        .book-tagline {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-top: 1.5rem;
+        .book-blurb {
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: left;
+        }
+        
+        .book-blurb p {
+            margin-bottom: 1rem;
         }
         
         /* About Section */
@@ -439,10 +454,13 @@
             }
 
             .hero {
-                flex-direction: column-reverse;
-                text-align: center;
                 min-height: auto;
                 padding: 3rem 0;
+            }
+            
+            .hero-inner {
+                flex-direction: column-reverse;
+                text-align: center;
             }
 
             .hero-content, .hero-image {
@@ -570,14 +588,18 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero section">
-        <div class="hero-content">
-            <h1 class="hero-title">Debut Novel</h1>
-            <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
-            <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
-            <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
-        </div>
-        <div class="hero-image">
-            <img src="images/ABloodveiledDescent-Ebook.jpg" alt="Book cover - Debut Novel by Haley M. Opet">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1 class="hero-title">Debut Novel</h1>
+                    <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
+                    <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
+                    <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/ABloodveiledDescent-Ebook.jpg" alt="Book cover - Debut Novel by Haley M. Opet">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -595,8 +617,14 @@
                     <h3>A Bloodveiled Descent</h3>
                     <p class="book-series">The Solwyn Duology - Book One</p>
                     <p class="book-author">by Haley M. Opet</p>
-                    <p class="book-description">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
-                    <p class="book-tagline">"Magic runs in the blood, but darkness rules the soul."</p>
+                    <p class="book-release">Scheduled to release November 10, 2025. Kindle pre-order now available on Amazon.</p>
+                    <div class="book-blurb">
+                        <p>Evelyne Duskwood was raised to be poised, polished, and properly betrothed. But when courtly betrayal shatters her future and her younger brother begins to unravel under the weight of strange visions, Evelyne's carefully arranged life collapses—and something far darker begins to stir.</p>
+                        <p>A scorched blood sigil. Whispers of a long-banished magic. A land ruled by shadows and fear.</p>
+                        <p>Evelyne's search for answers pulls her north to Nerathar, a haunted territory twisted by blood magic and home to monsters that were once men. Among them: the Noskari, cursed beings who feed on power—and the enigmatic wolfpack that hunts them.</p>
+                        <p>Captured and thrust into a world of instinct and secrecy, Evelyne finds herself at odds with Kaldrek, the pack's ruthless alpha. He's everything she resents: unbending, wild, and unmoved by her noble upbringing. But as danger grows and their paths entwine, the simmering tension between them ignites into something neither of them can deny.</p>
+                        <p>In a land where magic is buried and blood remembers, Evelyne must confront long-hidden truths about her family, her heart, and a prophecy that could reshape the world.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -686,7 +714,7 @@
     <footer id="contact">
         <div class="container">
             <div class="logo">
-                <div>H/M</div>
+                <img src="images/velvet-tea-press-logo-transparent.png" alt="Velvet Tea Press Logo">
             </div>
             <div class="logo-text">Haley M. Opet</div>
             <div class="social-links">
@@ -700,6 +728,17 @@
     </footer>
 
     <script>
+        // Header scroll effect
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         // Mobile Menu Functionality
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
