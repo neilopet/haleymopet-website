@@ -98,6 +98,90 @@
             border-color: #e88600;
             color: #000;
         }
+        
+        .btn-barnes {
+            background-color: #2a6329;
+            color: #fff;
+            border-color: #2a6329;
+            font-weight: 600;
+        }
+        
+        .btn-barnes:hover {
+            background-color: #1e4a1d;
+            border-color: #1e4a1d;
+            color: #fff;
+        }
+        
+        .btn-bam {
+            background-color: #c8102e;
+            color: #fff;
+            border-color: #c8102e;
+            font-weight: 600;
+        }
+        
+        .btn-bam:hover {
+            background-color: #a00d26;
+            border-color: #a00d26;
+            color: #fff;
+        }
+        
+        .btn-paperback {
+            background-color: #232f3e;
+            color: #fff;
+            border-color: #232f3e;
+            font-weight: 600;
+        }
+        
+        .btn-paperback:hover {
+            background-color: #1a1f2a;
+            border-color: #1a1f2a;
+            color: #fff;
+        }
+        
+        /* Purchase Buttons Grid */
+        .purchase-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            max-width: 600px;
+        }
+        
+        .purchase-buttons .btn {
+            margin-top: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Format badges */
+        .format-badges {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .format-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--secondary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+        }
+        
+        .format-badge.available {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .format-badge.coming-soon {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
 
         .logo {
             display: flex;
@@ -244,6 +328,16 @@
         
         .hero-buttons .btn {
             margin-top: 0;
+        }
+        
+        .hero-purchase-section {
+            margin-top: 2rem;
+        }
+        
+        .hero-purchase-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
         }
         
         /* Featured Book Section */
@@ -424,7 +518,8 @@
             display: flex;
             justify-content: center;
             margin: 1.5rem 0;
-            gap: 1.5rem;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
         
         .social-link {
@@ -590,6 +685,18 @@
             .hero-buttons .btn {
                 width: 100%;
                 margin-bottom: 1rem;
+            }
+            
+            .purchase-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-purchase-section {
+                text-align: center;
+            }
+            
+            .format-badges {
+                justify-content: center;
             }
             
             .nav-menu {
@@ -787,11 +894,24 @@
             <div class="hero-inner">
                 <div class="hero-content">
                     <h1 class="hero-title">A Bloodveiled Descent</h1>
+                    <p class="hero-subtitle">Book One of The Solwyn Duology</p>
                     <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
                     <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
-                    <div class="hero-buttons">
-                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPurchase('hero_section')"><i class="fab fa-amazon"></i> GET IT ON KINDLE</a>
-                        <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
+                    <div class="hero-purchase-section">
+                        <div class="format-badges">
+                            <span class="format-badge available"><i class="fas fa-check-circle"></i> Kindle</span>
+                            <span class="format-badge available"><i class="fas fa-check-circle"></i> Paperback</span>
+                            <span class="format-badge coming-soon"><i class="fas fa-clock"></i> Audiobook Coming Soon</span>
+                        </div>
+                        <div class="purchase-buttons">
+                            <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPurchase('hero_kindle')"><i class="fab fa-amazon"></i> GET KINDLE</a>
+                            <a href="https://www.amazon.com/dp/B0FT2PFQTF" target="_blank" class="btn btn-paperback" onclick="trackPurchase('hero_paperback')"><i class="fab fa-amazon"></i> GET PAPERBACK</a>
+                            <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" class="btn btn-barnes" onclick="trackPurchase('hero_barnes')"><i class="fas fa-book"></i> Barnes & Noble</a>
+                            <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" class="btn btn-bam" onclick="trackPurchase('hero_bam')"><i class="fas fa-store"></i> Books-A-Million</a>
+                        </div>
+                        <div class="hero-buttons" style="margin-top: 1rem;">
+                            <a href="#newsletter" class="btn">SUBSCRIBE FOR UPDATES</a>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -813,8 +933,18 @@
                     <h3>A Bloodveiled Descent</h3>
                     <p class="book-series">The Solwyn Duology - Book One</p>
                     <p class="book-author">by Haley M. Opet</p>
-                    <p class="book-release">Now available on Amazon Kindle!</p>
-                    <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPurchase('featured_section')"><i class="fab fa-amazon"></i> GET IT ON KINDLE</a>
+                    <p class="book-release">Now available in Kindle and Paperback!</p>
+                    <div class="format-badges">
+                        <span class="format-badge available"><i class="fas fa-check-circle"></i> Kindle</span>
+                        <span class="format-badge available"><i class="fas fa-check-circle"></i> Paperback</span>
+                        <span class="format-badge coming-soon"><i class="fas fa-clock"></i> Audiobook Coming Soon</span>
+                    </div>
+                    <div class="purchase-buttons" style="max-width: 100%;">
+                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPurchase('featured_kindle')"><i class="fab fa-amazon"></i> GET KINDLE</a>
+                        <a href="https://www.amazon.com/dp/B0FT2PFQTF" target="_blank" class="btn btn-paperback" onclick="trackPurchase('featured_paperback')"><i class="fab fa-amazon"></i> GET PAPERBACK</a>
+                        <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" class="btn btn-barnes" onclick="trackPurchase('featured_barnes')"><i class="fas fa-book"></i> Barnes & Noble</a>
+                        <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" class="btn btn-bam" onclick="trackPurchase('featured_bam')"><i class="fas fa-store"></i> Books-A-Million</a>
+                    </div>
                     <div class="book-blurb">
                         <p>Evelyne Duskwood was raised to be poised, polished, and properly betrothed. But when courtly betrayal shatters her future and her younger brother begins to unravel under the weight of strange visions, Evelyne's carefully arranged life collapses—and something far darker begins to stir.</p>
                         <p>A scorched blood sigil. Whispers of a long-banished magic. A land ruled by shadows and fear.</p>
@@ -904,10 +1034,10 @@
             </div>
             <div class="logo-text">Haley M. Opet</div>
             <div class="social-links">
-                <a href="https://www.instagram.com/haleym.opet" class="social-link" onclick="trackSocialClick('Instagram')" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.threads.net/@haleym.opet" class="social-link threads-icon" onclick="trackSocialClick('Threads')" target="_blank">@</a>
-                <a href="https://www.tiktok.com/@haleymopet" class="social-link" onclick="trackSocialClick('TikTok')" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://linktr.ee/haleym.opet" class="social-link" onclick="trackSocialClick('Linktree')" target="_blank"><i class="fas fa-link"></i></a>
+                <a href="https://www.instagram.com/haleym.opet" class="social-link" onclick="trackSocialClick('Instagram')" target="_blank"><i class="fab fa-instagram"></i> <span style="font-size: 0.9rem;">@haleym.opet</span></a>
+                <a href="https://www.threads.net/@haleym.opet" class="social-link threads-icon" onclick="trackSocialClick('Threads')" target="_blank">@ <span style="font-size: 0.9rem;">@haleym.opet</span></a>
+                <a href="https://www.tiktok.com/@haleymopet" class="social-link" onclick="trackSocialClick('TikTok')" target="_blank"><i class="fab fa-tiktok"></i> <span style="font-size: 0.9rem;">@haleymopet</span></a>
+                <a href="https://linktr.ee/haleym.opet" class="social-link" onclick="trackSocialClick('Linktree')" target="_blank"><i class="fas fa-link"></i> <span style="font-size: 0.9rem;">All Links</span></a>
             </div>
             <p class="copyright">&copy; 2025 Haley M. Opet. All Rights Reserved.</p>
         </div>
