@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Bloodveiled Descent - Available Now | Haley M. Opet</title>
+    <meta name="description" content="A Bloodveiled Descent by Haley M. Opet - Available now in Kindle and Paperback! Book One of The Solwyn Duology. A dark fantasy romance of duty, magic, and forbidden love. Get your copy today at Amazon, Barnes & Noble, and Books-A-Million.">
+    <meta name="keywords" content="A Bloodveiled Descent, Haley M. Opet, fantasy romance, dark fantasy, werewolf romance, The Solwyn Duology, romantasy, debut novel">
+    <meta property="og:title" content="A Bloodveiled Descent - Available Now | Haley M. Opet">
+    <meta property="og:description" content="A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand. Available now in Kindle and Paperback!">
+    <meta property="og:image" content="https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg">
+    <meta property="og:url" content="https://haleymopet.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Bloodveiled Descent - Available Now">
+    <meta name="twitter:description" content="A dark fantasy romance by Haley M. Opet. Available now in Kindle and Paperback!">
+    <meta name="twitter:image" content="https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg">
     <style>
         :root {
             --primary-color: #333333;
@@ -412,6 +423,123 @@
         .featured-book .btn i {
             margin-right: 0.5rem;
             font-size: 1.1em;
+        }
+        
+        /* Where to Buy Section */
+        .where-to-buy-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-color) 100%);
+        }
+        
+        .where-to-buy-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .retailer-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .retailer-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .retailer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .retailer-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .retailer-logo.amazon { color: #FF9900; }
+        .retailer-logo.barnes { color: #2a6329; }
+        .retailer-logo.bam { color: #c8102e; }
+        
+        .retailer-name {
+            font-family: var(--font-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .retailer-formats {
+            margin-bottom: 1.5rem;
+        }
+        
+        .retailer-formats span {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            background-color: var(--secondary-color);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+        }
+        
+        .retailer-card .btn {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        
+        /* Purchase Summary Box */
+        .purchase-summary {
+            background: white;
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .purchase-summary h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price-display {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .price-item {
+            text-align: center;
+        }
+        
+        .price-format {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+        
+        .price-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .retailer-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-display {
+                gap: 2rem;
+            }
         }
         
         /* About Section */
@@ -829,19 +957,74 @@
         // Enhanced ecommerce tracking for purchases
         function trackPurchase(source) {
             if (!hasAnalyticsConsent()) return;
+            
+            // Parse the source to extract details
+            const parts = source.split('_');
+            const location = parts[0]; // hero, featured, or whereToBuy
+            const retailerFormat = parts[1]; // kindle, paperback, barnes, bam
+            
+            // Determine retailer and format
+            let retailer = 'Amazon';
+            let format = 'Ebook';
+            let itemId = 'debut-novel-ebook';
+            let price = 4.99;
+            
+            switch(retailerFormat) {
+                case 'kindle':
+                    retailer = 'Amazon';
+                    format = 'Kindle';
+                    itemId = 'B0FFX941T6';
+                    price = 4.99;
+                    break;
+                case 'paperback':
+                    retailer = 'Amazon';
+                    format = 'Paperback';
+                    itemId = 'B0FT2PFQTF';
+                    price = 14.99;
+                    break;
+                case 'barnes':
+                    retailer = 'Barnes & Noble';
+                    format = 'Multiple';
+                    itemId = 'barnes-noble';
+                    price = null;
+                    break;
+                case 'bam':
+                    retailer = 'Books-A-Million';
+                    format = 'Multiple';
+                    itemId = 'books-a-million';
+                    price = null;
+                    break;
+            }
+            
+            // Enhanced tracking with differentiated data
             gtag('event', 'purchase_intent', {
                 event_category: 'Book Purchase',
-                event_label: source,
-                value: 1,
+                event_label: `${location}_${retailer}_${format}`,
+                value: price || 1,
                 currency: 'USD',
+                custom_parameters: {
+                    click_location: location,
+                    retailer: retailer,
+                    format: format,
+                    book_title: 'A Bloodveiled Descent'
+                },
                 items: [{
-                    item_id: 'debut-novel-ebook',
-                    item_name: 'A Bloodveiled Descent - Ebook',
+                    item_id: itemId,
+                    item_name: `A Bloodveiled Descent - ${format}`,
                     item_category: 'Book',
                     item_category2: 'Fantasy Romance',
-                    price: 4.99,
+                    item_variant: format,
+                    item_brand: 'Velvet Tea Press',
+                    price: price,
                     quantity: 1
                 }]
+            });
+            
+            // Also send a simpler event for easier reporting
+            gtag('event', `click_${retailer.toLowerCase().replace(/\s+/g, '_')}`, {
+                event_category: 'Retailer Clicks',
+                event_label: `${format} from ${location}`,
+                value: 1
             });
         }
         
@@ -868,6 +1051,81 @@
     
     <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/242278621.js"></script>
+    
+    <!-- Schema.org Structured Data for Book -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "A Bloodveiled Descent",
+      "author": {
+        "@type": "Person",
+        "name": "Haley M. Opet",
+        "url": "https://haleymopet.com"
+      },
+      "datePublished": "2025-11-11",
+      "description": "A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.",
+      "genre": ["Fantasy", "Dark Fantasy", "Romance", "Romantasy"],
+      "inLanguage": "en",
+      "isbn": "979-8-9991769-0-5",
+      "bookFormat": ["EBook", "Paperback"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Velvet Tea Press"
+      },
+      "isPartOf": {
+        "@type": "BookSeries",
+        "name": "The Solwyn Duology",
+        "position": "1"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "4.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.amazon.com/dp/B0FFX941T6",
+          "seller": {
+            "@type": "Organization",
+            "name": "Amazon"
+          },
+          "bookFormat": "EBook"
+        },
+        {
+          "@type": "Offer",
+          "price": "14.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.amazon.com/dp/B0FT2PFQTF",
+          "seller": {
+            "@type": "Organization",
+            "name": "Amazon"
+          },
+          "bookFormat": "Paperback"
+        },
+        {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497",
+          "seller": {
+            "@type": "Organization",
+            "name": "Barnes & Noble"
+          }
+        },
+        {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905",
+          "seller": {
+            "@type": "Organization",
+            "name": "Books-A-Million"
+          }
+        }
+      ],
+      "image": "https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg",
+      "url": "https://haleymopet.com"
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -881,6 +1139,7 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#where-to-buy" class="nav-link">WHERE TO BUY</a></li>
                 <li><a href="#about" class="nav-link">ABOUT</a></li>
                 <li><a href="#blog" class="nav-link">BLOG</a></li>
                 <li><a href="#contact" class="nav-link">CONTACT</a></li>
@@ -952,6 +1211,91 @@
                         <p>Captured and thrust into a world of instinct and secrecy, Evelyne finds herself at odds with Kaldrek, the pack's ruthless alpha. He's everything she resents: unbending, wild, and unmoved by her noble upbringing. But as danger grows and their paths entwine, the simmering tension between them ignites into something neither of them can deny.</p>
                         <p>In a land where magic is buried and blood remembers, Evelyne must confront long-hidden truths about her family, her heart, and a prophecy that could reshape the world.</p>
                     </div>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background-color: var(--secondary-color); border-radius: 5px;">
+                        <p style="text-align: center; font-style: italic; color: var(--accent-color); margin: 0;">
+                            <strong>Book Two of The Solwyn Duology coming soon!</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-color);">Join the newsletter to be the first to know about the next chapter in Evelyne's journey.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where to Buy Section -->
+    <section id="where-to-buy" class="where-to-buy-section">
+        <div class="container">
+            <div class="where-to-buy-content">
+                <h2 class="section-title">Where to Buy</h2>
+                
+                <div class="purchase-summary">
+                    <h3>Available Now!</h3>
+                    <div class="price-display">
+                        <div class="price-item">
+                            <div class="price-format">Kindle Edition</div>
+                            <div class="price-value">$4.99</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-format">Paperback</div>
+                            <div class="price-value">$14.99</div>
+                        </div>
+                    </div>
+                    <p style="margin: 0;">Get your copy of <em>A Bloodveiled Descent</em> from your favorite retailer!</p>
+                </div>
+
+                <div class="retailer-cards">
+                    <!-- Amazon Card -->
+                    <div class="retailer-card">
+                        <div class="retailer-logo amazon">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                        <h3 class="retailer-name">Amazon</h3>
+                        <div class="retailer-formats">
+                            <span>Kindle</span>
+                            <span>Paperback</span>
+                        </div>
+                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPurchase('whereToBuy_kindle')">
+                            <i class="fab fa-amazon"></i> Get Kindle Edition
+                        </a>
+                        <a href="https://www.amazon.com/dp/B0FT2PFQTF" target="_blank" class="btn btn-paperback" onclick="trackPurchase('whereToBuy_paperback')">
+                            <i class="fab fa-amazon"></i> Get Paperback
+                        </a>
+                    </div>
+
+                    <!-- Barnes & Noble Card -->
+                    <div class="retailer-card">
+                        <div class="retailer-logo barnes">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="retailer-name">Barnes & Noble</h3>
+                        <div class="retailer-formats">
+                            <span>All Formats</span>
+                        </div>
+                        <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" class="btn btn-barnes" onclick="trackPurchase('whereToBuy_barnes')">
+                            <i class="fas fa-book"></i> Shop Barnes & Noble
+                        </a>
+                    </div>
+
+                    <!-- Books-A-Million Card -->
+                    <div class="retailer-card">
+                        <div class="retailer-logo bam">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="retailer-name">Books-A-Million</h3>
+                        <div class="retailer-formats">
+                            <span>All Formats</span>
+                        </div>
+                        <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" class="btn btn-bam" onclick="trackPurchase('whereToBuy_bam')">
+                            <i class="fas fa-store"></i> Shop Books-A-Million
+                        </a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="font-style: italic; color: var(--accent-color);">
+                        <i class="fas fa-clock"></i> Audiobook coming soon! Join our newsletter to be notified when it's available.
+                    </p>
+                    <a href="#newsletter" class="btn">Subscribe for Updates</a>
                 </div>
             </div>
         </div>
