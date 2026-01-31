@@ -39,6 +39,13 @@ Author website for Haley M. Opet, promoting her debut novel "A Bloodveiled Desce
 - **Pre-order**: Amazon Kindle link with conversion tracking
 - **Cover**: Local image at `images/ABloodveiledDescent-Ebook.jpg`
 - **Tracking**: Pre-order clicks tracked as `purchase_intent` events
+- **Audiobook**: Available on Audible (launched January 2026)
+  - **US**: https://www.audible.com/pd/B0GKQ4JNLR/?source_code=AUDFPWS0223189MWT-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_us
+  - **UK**: https://www.audible.co.uk/pd/B0GKQ4RZQH/?source_code=AUKFrDlWS02231890H6-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_uk
+  - **CA**: https://www.audible.ca/pd/B0GKQ2KGMS/?source_code=AMNORWS022318003G-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_ca
+  - **AU**: https://www.audible.com.au/pd/B0GKQSLL4G/?source_code=AUDORWS022318009C-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_au
+  - **FR**: https://www.audible.fr/pd/B0GKQ81RN3/?source_code=FRAORWS022318903B-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_fr
+  - **DE**: https://www.audible.de/pd/B0GKQCBR7N/?source_code=EKAORWS0223189009-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_de
 
 ### 4. Analytics & Privacy (NEW June 2025)
 - **Platform**: Google Analytics 4 (Measurement ID: G-S2C5TDLRZZ)
