@@ -1,0 +1,199 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "@id": "https://haleymopet.com/#book",
+      "name": "A Bloodveiled Descent",
+      "alternateName": "A Bloodveiled Descent: Book One of The Solwyn Duology",
+      "author": {
+        "@id": "https://haleymopet.com/#author"
+      },
+      "publisher": {
+        "@id": "https://haleymopet.com/#publisher"
+      },
+      "datePublished": "2025-11-10",
+      "inLanguage": "en",
+      "genre": ["Fantasy", "Dark Fantasy", "Romance", "Romantasy", "Paranormal Romance"],
+      "description": "A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand. Evelyne Duskwood was raised to be poised, polished, and properly betrothed. But when courtly betrayal shatters her future and her younger brother begins to unravel under the weight of strange visions, Evelyne's carefully arranged life collapses--and something far darker begins to stir.",
+      "image": "https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg",
+      "url": "https://haleymopet.com",
+      "isPartOf": {
+        "@type": "BookSeries",
+        "name": "The Solwyn Duology",
+        "url": "https://haleymopet.com"
+      },
+      "position": "1",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://haleymopet.com/#kindle-edition",
+          "isbn": "9798999176912",
+          "bookFormat": "https://schema.org/EBook",
+          "name": "A Bloodveiled Descent (Kindle Edition)",
+          "author": {
+            "@id": "https://haleymopet.com/#author"
+          },
+          "publisher": {
+            "@id": "https://haleymopet.com/#publisher"
+          },
+          "datePublished": "2025-11-10",
+          "inLanguage": "en",
+          "numberOfPages": 493,
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "4.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0FFX941T6",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Book",
+          "@id": "https://haleymopet.com/#paperback-edition",
+          "isbn": "9798999176905",
+          "bookFormat": "https://schema.org/Paperback",
+          "name": "A Bloodveiled Descent (Paperback)",
+          "author": {
+            "@id": "https://haleymopet.com/#author"
+          },
+          "publisher": {
+            "@id": "https://haleymopet.com/#publisher"
+          },
+          "datePublished": "2025-11-10",
+          "inLanguage": "en",
+          "numberOfPages": 486,
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "19.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.amazon.com/dp/B0FT2PFQTF",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497",
+              "seller": {
+                "@type": "Organization",
+                "name": "Barnes & Noble"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905",
+              "seller": {
+                "@type": "Organization",
+                "name": "Books-A-Million"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Book",
+          "@id": "https://haleymopet.com/#audiobook-edition",
+          "bookFormat": "https://schema.org/AudiobookFormat",
+          "name": "A Bloodveiled Descent (Audiobook)",
+          "author": {
+            "@id": "https://haleymopet.com/#author"
+          },
+          "publisher": {
+            "@id": "https://haleymopet.com/#publisher"
+          },
+          "datePublished": "2025-11-10",
+          "inLanguage": "en",
+          "offers": [
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.audible.com/pd/B0GKQ4JNLR/?source_code=AUDFPWS0223189MWT-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_us",
+              "seller": {
+                "@type": "Organization",
+                "name": "Audible"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.audible.co.uk/pd/B0GKQ4RZQH/?source_code=AUKFrDlWS02231890H6-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_uk",
+              "seller": {
+                "@type": "Organization",
+                "name": "Audible UK"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.audible.ca/pd/B0GKQ2KGMS/?source_code=AMNORWS022318003G-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_ca",
+              "seller": {
+                "@type": "Organization",
+                "name": "Audible Canada"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.audible.com.au/pd/B0GKQSLL4G/?source_code=AUDORWS022318009C-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_au",
+              "seller": {
+                "@type": "Organization",
+                "name": "Audible Australia"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.audible.fr/pd/B0GKQ81RN3/?source_code=FRAORWS022318903B-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_fr",
+              "seller": {
+                "@type": "Organization",
+                "name": "Audible France"
+              }
+            },
+            {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.audible.de/pd/B0GKQCBR7N/?source_code=EKAORWS0223189009-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_de",
+              "seller": {
+                "@type": "Organization",
+                "name": "Audible Germany"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://haleymopet.com/#author",
+      "name": "Haley M. Opet",
+      "url": "https://haleymopet.com",
+      "image": "https://haleymopet.com/images/haley-headshot-400.jpg",
+      "description": "Haley M. Opet is a fantasy writer, mother, and dreamer who weaves tales of magic, intrigue, and adventure.",
+      "sameAs": [
+        "https://www.instagram.com/haleym.opet",
+        "https://www.threads.net/@haleym.opet",
+        "https://www.tiktok.com/@haleymopet",
+        "https://www.goodreads.com/author/show/57371834.Haley_M_Opet",
+        "https://linktr.ee/haleym.opet"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://haleymopet.com/#publisher",
+      "name": "Velvet Tea Press",
+      "logo": "https://haleymopet.com/images/velvet-tea-press-logo-transparent.png",
+      "url": "https://haleymopet.com"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BookSeries",
+      "@id": "https://haleymopet.com/#series",
+      "name": "The Solwyn Duology",
+      "author": {
+        "@id": "https://haleymopet.com/#person"
+      },
+      "numberOfBooks": 2,
+      "genre": ["Fantasy", "Romance", "Gothic Fantasy", "Paranormal Romance"],
+      "hasPart": [
+        {
+          "@id": "https://haleymopet.com/#book"
+        }
+      ]
+    },
+    {
+      "@type": "Audiobook",
+      "@id": "https://haleymopet.com/#audiobook",
+      "name": "A Bloodveiled Descent",
+      "bookFormat": "AudiobookFormat",
+      "author": {
+        "@id": "https://haleymopet.com/#person"
+      },
+      "readBy": {
+        "@type": "Person",
+        "name": "Susanna Lloyd"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Velvet Tea Press"
+      },
+      "datePublished": "2026-01-30",
+      "duration": "PT16H1M",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://haleymopet.com/#series"
+      },
+      "position": "1",
+      "description": "A Bloodveiled Descent by Haley M. Opet, narrated by Susanna Lloyd. Book One of The Solwyn Duology. A dark gothic paranormal fantasy romance of fate, magic, and forbidden bonds.",
+      "image": "https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg",
+      "url": "https://www.audible.com/pd/B0GKQ4JNLR",
+      "sameAs": [
+        "https://www.audible.com/pd/B0GKQ4JNLR"
+      ],
+      "workExample": {
+        "@id": "https://haleymopet.com/#book"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.93",
+        "bestRating": "5",
+        "ratingCount": "163",
+        "reviewCount": "142"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://haleymopet.com/#book",
+      "name": "A Bloodveiled Descent",
+      "author": {
+        "@id": "https://haleymopet.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://haleymopet.com/#series"
+      },
+      "position": "1",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "@id": "https://haleymopet.com/#aggregaterating",
+        "itemReviewed": {
+          "@id": "https://haleymopet.com/#book"
+        },
+        "ratingValue": "3.93",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "163",
+        "reviewCount": "142"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "kayleigh"
+          },
+          "datePublished": "2025-11-10",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "name": "Wow from beginning to end",
+          "reviewBody": "This book...wow. All I have to say is wow! From beginning to end, I was hooked! The world building, the dark magic and overall magic system was truly a joy to learn.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Goodreads"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Reedsy Discovery Reviewer"
+          },
+          "datePublished": "2025-11-10",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "name": "Completely transfixed",
+          "reviewBody": "I do not give five stars easily, but A Bloodveiled Descent completely transfixed me. The tone blends historical fantasy with gothic horror, and some of the deaths struck unexpectedly hard with grief that felt raw and real. I could not stop reading and am already eagerly waiting for book two.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Reedsy Discovery"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Kalin"
+          },
+          "datePublished": "2025-11-10",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4",
+            "bestRating": "5"
+          },
+          "name": "This world has everything",
+          "reviewBody": "This world has everything, Bridgerton balls, shifters, and dark consuming magic. So excited to read more!",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Goodreads"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Shannon K G"
+          },
+          "datePublished": "2025-11-10",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4",
+            "bestRating": "5"
+          },
+          "name": "What a ride",
+          "reviewBody": "What a ride. From dancing in the halls high society to journeying through woods chasing the destruction of dark magic.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Goodreads"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Crystal"
+          },
+          "datePublished": "2025-11-10",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4",
+            "bestRating": "5"
+          },
+          "name": "Beautifully written fantasy",
+          "reviewBody": "Overall, it's a beautifully written fantasy with strong characters and atmosphere.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Goodreads"
+          }
+        }
+      ]
+    }
+  ]
+}

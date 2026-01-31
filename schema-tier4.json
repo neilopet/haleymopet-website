@@ -1,0 +1,138 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://haleymopet.com/#profilepage",
+      "name": "About Haley M. Opet",
+      "url": "https://haleymopet.com/#about",
+      "description": "Haley M. Opet is a fantasy writer, mother, and dreamer who weaves tales of magic, intrigue, and adventure.",
+      "mainEntity": {
+        "@id": "https://haleymopet.com/#person"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://haleymopet.com",
+        "name": "Haley M. Opet - Author Website"
+      },
+      "mainContentOfPage": {
+        "@type": "WebPageElement",
+        "cssSelector": "#about",
+        "text": "Haley M. Opet is a fantasy writer, mother, and dreamer who weaves tales of magic, intrigue, and adventure. By day, I'm a mother of three, a wife, and a full-time professional who has built a career I'm proud of. But by night, I lose myself in the world of magic, intrigue, and adventure. I've always been a lover of fantasy, drawn to rich worlds and characters that linger long after the last page. When a story took root in my mind -- a tale of hidden magic, wolf shifters, and a heroine torn between duty and destiny -- I knew I had to write it. Now, I'm bringing that world to life, and I can't wait for you to step into the shadows with me. Also, I'm a devoted pet lover -- because every great fantasy world needs a loyal companion."
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://haleymopet.com/#person",
+      "name": "Haley M. Opet",
+      "url": "https://haleymopet.com",
+      "description": "Fantasy writer, mother, and dreamer who weaves tales of magic, intrigue, and adventure.",
+      "image": {
+        "@id": "https://haleymopet.com/#authorimage"
+      },
+      "jobTitle": "Author",
+      "sameAs": [
+        "https://www.instagram.com/haleym.opet",
+        "https://www.threads.net/@haleym.opet",
+        "https://www.tiktok.com/@haleymopet",
+        "https://linktr.ee/haleym.opet"
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://haleymopet.com/#bookcover",
+      "contentUrl": "https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg",
+      "url": "https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg",
+      "name": "A Bloodveiled Descent - Book Cover",
+      "caption": "A Bloodveiled Descent - Debut novel by Haley M. Opet",
+      "description": "Book cover for A Bloodveiled Descent, Book One of The Solwyn Duology by Haley M. Opet, published by Velvet Tea Press.",
+      "width": {
+        "@type": "QuantitativeValue",
+        "value": 3165,
+        "unitCode": "E37"
+      },
+      "height": {
+        "@type": "QuantitativeValue",
+        "value": 4769,
+        "unitCode": "E37"
+      },
+      "encodingFormat": "image/jpeg",
+      "representativeOfPage": true,
+      "about": {
+        "@id": "https://haleymopet.com/#book"
+      },
+      "copyrightHolder": {
+        "@id": "https://haleymopet.com/#person"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://haleymopet.com/#authorimage",
+      "contentUrl": "https://haleymopet.com/images/haley-headshot-400.jpg",
+      "url": "https://haleymopet.com/images/haley-headshot-400.jpg",
+      "name": "Haley M. Opet - Author Photo",
+      "caption": "Haley M. Opet",
+      "description": "Author headshot of Haley M. Opet, fantasy writer and author of A Bloodveiled Descent.",
+      "width": {
+        "@type": "QuantitativeValue",
+        "value": 400,
+        "unitCode": "E37"
+      },
+      "height": {
+        "@type": "QuantitativeValue",
+        "value": 500,
+        "unitCode": "E37"
+      },
+      "encodingFormat": "image/jpeg",
+      "about": {
+        "@id": "https://haleymopet.com/#person"
+      },
+      "copyrightHolder": {
+        "@id": "https://haleymopet.com/#person"
+      }
+    },
+    {
+      "@type": "PublicationEvent",
+      "@id": "https://haleymopet.com/#publication-event",
+      "name": "Release of A Bloodveiled Descent",
+      "description": "Publication of A Bloodveiled Descent, Book One of The Solwyn Duology by Haley M. Opet.",
+      "startDate": "2025-11-10",
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "Multiple Retailers",
+        "url": "https://haleymopet.com/#where-to-buy"
+      },
+      "publishedBy": {
+        "@type": "Organization",
+        "name": "Velvet Tea Press",
+        "logo": {
+          "@type": "ImageObject",
+          "contentUrl": "https://haleymopet.com/images/velvet-tea-press-logo-transparent.png",
+          "url": "https://haleymopet.com/images/velvet-tea-press-logo-transparent.png",
+          "width": {
+            "@type": "QuantitativeValue",
+            "value": 1024,
+            "unitCode": "E37"
+          },
+          "height": {
+            "@type": "QuantitativeValue",
+            "value": 1024,
+            "unitCode": "E37"
+          },
+          "encodingFormat": "image/png"
+        }
+      },
+      "publishedOn": {
+        "@type": "BroadcastService",
+        "name": "Amazon, Barnes & Noble, Books-A-Million, Audible",
+        "url": "https://haleymopet.com/#where-to-buy"
+      },
+      "about": {
+        "@id": "https://haleymopet.com/#book"
+      },
+      "organizer": {
+        "@id": "https://haleymopet.com/#person"
+      }
+    }
+  ]
+}
