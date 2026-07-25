@@ -6,15 +6,18 @@
     <title>A Bloodveiled Descent - Available Now | Haley M. Opet</title>
     <meta name="description" content="A Bloodveiled Descent by Haley M. Opet - Available now in Kindle and Paperback! Book One of The Solwyn Duology. A dark fantasy romance of duty, magic, and forbidden love. Get your copy today at Amazon, Barnes & Noble, and Books-A-Million.">
     <meta name="keywords" content="A Bloodveiled Descent, Haley M. Opet, fantasy romance, dark fantasy, werewolf romance, The Solwyn Duology, romantasy, debut novel">
-    <meta property="og:title" content="A Bloodveiled Descent - Available Now | Haley M. Opet">
-    <meta property="og:description" content="A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand. Available now in Kindle and Paperback!">
-    <meta property="og:image" content="https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg">
+    <meta property="og:title" content="A Sunwoven Ascent - Pre-Order Now | Haley M. Opet">
+    <meta property="og:description" content="Book Two of The Solwyn Duology. Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet... home. Pre-order the signed paperback or Kindle edition - releases August 31, 2026.">
+    <meta property="og:image" content="https://haleymopet.com/images/og-sunwoven-ascent.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="A Sunwoven Ascent, Book Two of The Solwyn Duology by Haley M. Opet - pre-order now, releases August 31, 2026">
     <meta property="og:url" content="https://haleymopet.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="A Bloodveiled Descent - Available Now">
-    <meta name="twitter:description" content="A dark fantasy romance by Haley M. Opet. Available now in Kindle and Paperback!">
-    <meta name="twitter:image" content="https://haleymopet.com/images/ABloodveiledDescent-Ebook.jpg">
+    <meta name="twitter:title" content="A Sunwoven Ascent - Pre-Order Now">
+    <meta name="twitter:description" content="Book Two of The Solwyn Duology by Haley M. Opet. Pre-order the signed paperback or Kindle edition - releases August 31, 2026.">
+    <meta name="twitter:image" content="https://haleymopet.com/images/og-sunwoven-ascent.jpg">
     <style>
         :root {
             --primary-color: #333333;
@@ -180,7 +183,94 @@
             color: var(--accent-color);
         }
 
-        
+        /* Icon row with visible retailer names */
+        .purchase-icons.labeled {
+            gap: 1.75rem;
+            flex-wrap: wrap;
+            row-gap: 0.75rem;
+        }
+
+        .purchase-icons.labeled a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 1.1rem;
+        }
+
+        .purchase-icons.labeled span {
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* Retailer logo badges */
+        .retailer-badges {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .retailer-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 8px;
+            padding: 0.75rem 0.9rem;
+            width: 164px;
+            height: 84px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .retailer-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+            border-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .retailer-badge img {
+            max-height: 52px;
+            max-width: 138px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .purchase-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .preorder-perk {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0.75rem 0 0;
+        }
+
+        .preorder-perk i {
+            color: var(--accent-color);
+            margin-right: 0.35rem;
+        }
+
+        .release-date {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .release-date i {
+            margin-right: 0.45rem;
+        }
+
         /* Format badges */
         .format-badges {
             display: flex;
@@ -367,172 +457,234 @@
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
-        
-        /* Coming Soon Section */
-        .coming-soon-section {
+
+        /* Hero Carousel */
+        .hero-carousel {
+            display: grid;
+            width: 100%;
+        }
+
+        .hero-slide {
+            grid-area: 1 / 1;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.8s ease;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .hero-carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hero-carousel-arrow {
+            background: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .hero-carousel-arrow:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .hero-carousel-dots {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .hero-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid var(--primary-color);
+            background-color: transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .hero-dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* The Solwyn Duology Section */
+        .duology-section {
             padding: 5rem 0;
             background-color: var(--primary-color);
             text-align: center;
         }
 
-        .coming-soon-content {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .coming-soon-label {
+        .duology-eyebrow {
             font-family: var(--font-secondary);
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
-        .coming-soon-title {
+        .duology-heading {
             font-family: var(--font-primary);
-            font-size: 3rem;
+            font-size: 2.4rem;
             color: var(--light-text);
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
+            margin-bottom: 3rem;
         }
 
-        .coming-soon-author {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-style: italic;
+        .duology-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .duology-book {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .duology-cover {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             margin-bottom: 1.5rem;
         }
 
-        .coming-soon-year {
-            font-family: var(--font-secondary);
-            font-size: 1rem;
+        .duology-book-num {
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.4rem;
         }
 
-        .coming-soon-blurb {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 2rem;
-        }
-
-        .coming-soon-blurb p {
-            margin-bottom: 0;
-        }
-
-        .btn-coming-soon {
-            border-color: var(--light-text);
-            color: var(--light-text);
-        }
-
-        .btn-coming-soon:hover {
-            background-color: var(--light-text);
-            color: var(--primary-color);
-        }
-        
-        /* Where to Buy Section */
-        .where-to-buy-section {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-color) 100%);
-        }
-        
-        .where-to-buy-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .retailer-cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .retailer-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        
-        .retailer-logo {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .retailer-logo.amazon { color: #FF9900; }
-        .retailer-logo.barnes { color: #2a6329; }
-        .retailer-logo.bam { color: #c8102e; }
-        .retailer-logo.audible { color: #F8991D; }
-        
-        .retailer-name {
+        .duology-book-title {
             font-family: var(--font-primary);
-            font-size: 1.1rem;
+            font-size: 1.6rem;
+            color: var(--light-text);
             margin-bottom: 0.75rem;
-            color: var(--primary-color);
         }
-        
-        .retailer-card .btn {
-            width: 100%;
-            margin-top: 0.5rem;
+
+        .duology-status {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.85rem;
         }
-        
-        /* Purchase Summary Box */
-        .purchase-summary {
-            background: white;
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
+
+        .duology-status.available {
+            background-color: #e8f5e9;
+            color: #2e7d32;
         }
-        
-        .purchase-summary h3 {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+
+        .duology-status.preorder {
+            background-color: #fff3e0;
+            color: #ef6c00;
         }
-        
-        .price-display {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .price-item {
-            text-align: center;
-        }
-        
-        .price-format {
+
+        .duology-meta {
             font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.3rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 1.25rem;
         }
-        
-        .price-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
+
+        .duology-prices {
+            list-style: none;
+            width: 100%;
+            max-width: 260px;
+            margin: 0 auto 1.5rem;
         }
-        
-        @media screen and (max-width: 768px) {
-            .retailer-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .price-display {
-                gap: 2rem;
-            }
+
+        .duology-prices li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.9rem;
         }
-        
+
+        .duology-prices .fmt {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .duology-prices .amt {
+            color: var(--light-text);
+            font-weight: 700;
+        }
+
+        .duology-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 0.85rem;
+        }
+
+        .duology-buys {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .duology-buys .btn {
+            margin-top: 0;
+            font-size: 0.72rem;
+            padding: 0.65rem 1.05rem;
+        }
+
+        .duology-book .retailer-badges {
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .duology-book .retailer-badge {
+            width: 128px;
+            height: 72px;
+            padding: 0.6rem 0.7rem;
+        }
+
+        .duology-book .retailer-badge img {
+            max-height: 44px;
+            max-width: 108px;
+        }
+
+        .duology-perk {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin: 1rem 0 0;
+        }
+
+
         /* About Section */
         .about-section {
             padding: 4rem 0;
@@ -882,16 +1034,23 @@
                 margin: 0.5rem 0;
             }
             
-            .coming-soon-title {
-                font-size: 2.2rem;
+            .duology-heading {
+                font-size: 1.9rem;
+                margin-bottom: 2rem;
             }
 
-            .reviews-carousel {
+            .duology-grid {
                 grid-template-columns: 1fr;
+                gap: 3.5rem;
             }
 
-            .review-card {
-                padding: 1.5rem;
+            .retailer-badges {
+                justify-content: center;
+            }
+
+            .retailer-badge {
+                width: 144px;
+                height: 76px;
             }
         }
 
@@ -995,6 +1154,17 @@
 
         .reviews-source a {
             color: var(--accent-color);
+        }
+
+        /* Must follow the base .reviews-carousel rule above to win on source order */
+        @media screen and (max-width: 768px) {
+            .reviews-carousel {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                padding: 1.5rem;
+            }
         }
     </style>
     <!-- Schema.org Structured Data (JSON-LD) -->
@@ -1290,6 +1460,112 @@
       ]
     },
     {
+      "@type": "Book",
+      "@id": "https://haleymopet.com/#book-two",
+      "name": "A Sunwoven Ascent",
+      "alternateName": "A Sunwoven Ascent: Book Two of The Solwyn Duology",
+      "author": {
+        "@id": "https://haleymopet.com/#person"
+      },
+      "publisher": {
+        "@id": "https://haleymopet.com/#publisher"
+      },
+      "datePublished": "2026-08-31",
+      "inLanguage": "en",
+      "genre": [
+        "Fantasy",
+        "Dark Fantasy",
+        "Romance",
+        "Romantasy",
+        "Paranormal Romance"
+      ],
+      "description": "Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet--home. A Sunwoven Ascent is a dark romantasy of love, power, and the cost of defying the life she was forced to live. The conclusion of The Solwyn Duology.",
+      "image": "https://haleymopet.com/images/ASunwovenAscent-Ebook.jpg",
+      "url": "https://haleymopet.com/#where-to-buy",
+      "isPartOf": {
+        "@id": "https://haleymopet.com/#series"
+      },
+      "position": "2",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://haleymopet.com/#sunwoven-kindle-edition",
+          "bookFormat": "https://schema.org/EBook",
+          "name": "A Sunwoven Ascent (Kindle Edition)",
+          "author": {
+            "@id": "https://haleymopet.com/#person"
+          },
+          "publisher": {
+            "@id": "https://haleymopet.com/#publisher"
+          },
+          "datePublished": "2026-08-31",
+          "inLanguage": "en",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "4.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder",
+              "url": "https://www.amazon.com/Sunwoven-Ascent-Book-Solwyn-Duology-ebook/dp/B0H42W3FC1",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Book",
+          "@id": "https://haleymopet.com/#sunwoven-paperback-edition",
+          "bookFormat": "https://schema.org/Paperback",
+          "name": "A Sunwoven Ascent (Signed Paperback)",
+          "author": {
+            "@id": "https://haleymopet.com/#person"
+          },
+          "publisher": {
+            "@id": "https://haleymopet.com/#publisher"
+          },
+          "datePublished": "2026-08-31",
+          "inLanguage": "en",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "19.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder",
+              "url": "https://www.flightoffantasybooks.com/shop/p/a-sunwoven-ascent",
+              "seller": {
+                "@type": "Organization",
+                "name": "Flight of Fantasy Book Shop"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "19.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder",
+              "url": "https://www.thecraftybookstore.com/product-page/a-sunwoven-ascent",
+              "seller": {
+                "@type": "Organization",
+                "name": "The Crafty Bookstore"
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "19.99",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/PreOrder",
+              "url": "https://thefatedchapterbookstore.com/products/a-sunwoven-ascent",
+              "seller": {
+                "@type": "Organization",
+                "name": "The Fated Chapter Bookstore"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "@type": "Person",
       "@id": "https://haleymopet.com/#person",
       "name": "Haley M. Opet",
@@ -1375,6 +1651,9 @@
       "hasPart": [
         {
           "@id": "https://haleymopet.com/#book"
+        },
+        {
+          "@id": "https://haleymopet.com/#book-two"
         }
       ]
     },
@@ -1448,12 +1727,12 @@
       "description": "Book cover for A Bloodveiled Descent, Book One of The Solwyn Duology by Haley M. Opet, published by Velvet Tea Press.",
       "width": {
         "@type": "QuantitativeValue",
-        "value": 3165,
+        "value": 1200,
         "unitCode": "E37"
       },
       "height": {
         "@type": "QuantitativeValue",
-        "value": 4769,
+        "value": 1808,
         "unitCode": "E37"
       },
       "encodingFormat": "image/jpeg",
@@ -1511,12 +1790,12 @@
           "url": "https://haleymopet.com/images/velvet-tea-press-logo-transparent.png",
           "width": {
             "@type": "QuantitativeValue",
-            "value": 1024,
+            "value": 360,
             "unitCode": "E37"
           },
           "height": {
             "@type": "QuantitativeValue",
-            "value": 1024,
+            "value": 360,
             "unitCode": "E37"
           },
           "encodingFormat": "image/png"
@@ -1598,7 +1877,8 @@
             let format = 'Ebook';
             let itemId = 'debut-novel-ebook';
             let price = 4.99;
-            
+            let bookTitle = 'A Bloodveiled Descent';
+
             switch(retailerFormat) {
                 case 'kindle':
                     retailer = 'Amazon';
@@ -1624,6 +1904,34 @@
                     itemId = 'books-a-million';
                     price = null;
                     break;
+                case 'sunwovenkindle':
+                    retailer = 'Amazon';
+                    format = 'Kindle Pre-Order';
+                    itemId = 'B0H42W3FC1';
+                    price = 4.99;
+                    bookTitle = 'A Sunwoven Ascent';
+                    break;
+                case 'flightoffantasy':
+                    retailer = 'Flight of Fantasy Books';
+                    format = 'Paperback Pre-Order';
+                    itemId = 'flight-of-fantasy-books';
+                    price = 19.99;
+                    bookTitle = 'A Sunwoven Ascent';
+                    break;
+                case 'craftybookstore':
+                    retailer = 'The Crafty Bookstore';
+                    format = 'Paperback Pre-Order';
+                    itemId = 'the-crafty-bookstore';
+                    price = 19.99;
+                    bookTitle = 'A Sunwoven Ascent';
+                    break;
+                case 'fatedchapter':
+                    retailer = 'The Fated Chapter';
+                    format = 'Paperback Pre-Order';
+                    itemId = 'the-fated-chapter';
+                    price = 19.99;
+                    bookTitle = 'A Sunwoven Ascent';
+                    break;
             }
             
             // Enhanced tracking with differentiated data
@@ -1636,11 +1944,11 @@
                     click_location: location,
                     retailer: retailer,
                     format: format,
-                    book_title: 'A Bloodveiled Descent'
+                    book_title: bookTitle
                 },
                 items: [{
                     item_id: itemId,
-                    item_name: `A Bloodveiled Descent - ${format}`,
+                    item_name: `${bookTitle} - ${format}`,
                     item_category: 'Book',
                     item_category2: 'Fantasy Romance',
                     item_variant: format,
@@ -1706,29 +2014,77 @@
     <!-- Hero Section -->
     <section id="home" class="hero section">
         <div class="container">
-            <div class="hero-inner">
-                <div class="hero-content">
-                    <h1 class="hero-title">A Bloodveiled Descent</h1>
-                    <p class="hero-subtitle">Book One of The Solwyn Duology</p>
-                    <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
-                    <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
-                    <div class="hero-purchase-section">
-                        <div class="format-badges">
-                            <span class="format-badge available"><i class="fas fa-check-circle"></i> Kindle</span>
-                            <span class="format-badge available"><i class="fas fa-check-circle"></i> Paperback</span>
-                            <span class="format-badge available"><i class="fas fa-check-circle"></i> Audiobook</span>
+            <div class="hero-carousel" id="hero-carousel">
+                <!-- Slide 1: A Sunwoven Ascent (Pre-Order) -->
+                <div class="hero-slide active" data-slide="0">
+                    <div class="hero-inner">
+                        <div class="hero-content">
+                            <p class="release-date"><i class="fas fa-star"></i> Pre-Order &mdash; Releases August 31, 2026</p>
+                            <h1 class="hero-title">A Sunwoven Ascent</h1>
+                            <p class="hero-subtitle">Book Two of The Solwyn Duology</p>
+                            <p class="hero-subtitle">Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet... home.</p>
+                            <p>A dark romantasy of love, power, and the cost of defying the life she was forced to live. The conclusion of The Solwyn Duology.</p>
+                            <div class="hero-purchase-section">
+                                <p class="purchase-label">Signed Paperback &mdash; $19.99</p>
+                                <div class="retailer-badges">
+                                    <a href="https://www.flightoffantasybooks.com/shop/p/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Pre-order from Flight of Fantasy Book Shop" onclick="trackPurchase('heroBook2_flightoffantasy')">
+                                        <img src="images/retailers/flight-of-fantasy.png" alt="Flight of Fantasy Book Shop" loading="lazy">
+                                    </a>
+                                    <a href="https://www.thecraftybookstore.com/product-page/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Pre-order from The Crafty Bookstore" onclick="trackPurchase('heroBook2_craftybookstore')">
+                                        <img src="images/retailers/the-crafty-bookstore.png" alt="The Crafty Bookstore" loading="lazy">
+                                    </a>
+                                    <a href="https://thefatedchapterbookstore.com/products/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Pre-order from The Fated Chapter Bookstore" onclick="trackPurchase('heroBook2_fatedchapter')">
+                                        <img src="images/retailers/the-fated-chapter.png" alt="The Fated Chapter Bookstore" loading="lazy">
+                                    </a>
+                                </div>
+                                <p class="preorder-perk"><i class="fas fa-gift"></i>Indie pre-orders include a signed bookplate &amp; bookish extras</p>
+                                <div class="hero-buttons">
+                                    <a href="https://www.amazon.com/Sunwoven-Ascent-Book-Solwyn-Duology-ebook/dp/B0H42W3FC1" target="_blank" rel="noopener noreferrer" class="btn btn-amazon" onclick="trackPurchase('heroBook2_sunwovenkindle')"><i class="fab fa-amazon"></i>&nbsp; Kindle eBook &mdash; $4.99</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="purchase-icons">
-                            <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" title="Amazon Kindle" onclick="trackPurchase('hero_kindle')"><i class="fab fa-amazon"></i></a>
-                            <a href="https://www.audible.com/pd/B0GKQ4JNLR/?source_code=AUDFPWS0223189MWT-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_us" target="_blank" title="Audible" class="audible-link" onclick="trackPurchase('hero_audible')"><i class="fab fa-audible"></i></a>
-                            <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" title="Barnes &amp; Noble" onclick="trackPurchase('hero_barnes')"><i class="fas fa-book-open"></i></a>
-                            <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" title="Books-A-Million" onclick="trackPurchase('hero_bam')"><i class="fas fa-store"></i></a>
+                        <div class="hero-image">
+                            <img src="images/ASunwovenAscent-Ebook.jpg" alt="A Sunwoven Ascent - Book Two of The Solwyn Duology by Haley M. Opet">
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="images/ABloodveiledDescent-Ebook.jpg" alt="A Bloodveiled Descent - Debut novel by Haley M. Opet">
+
+                <!-- Slide 2: A Bloodveiled Descent (Available Now) -->
+                <div class="hero-slide" data-slide="1">
+                    <div class="hero-inner">
+                        <div class="hero-content">
+                            <h1 class="hero-title">A Bloodveiled Descent</h1>
+                            <p class="hero-subtitle">Book One of The Solwyn Duology</p>
+                            <p class="hero-subtitle">A noblewoman bound by duty. A brother cursed by darkness. A journey into the unknown where love and betrayal walk hand in hand.</p>
+                            <p>In the southern lands, the courting season is in full bloom, and noble families scheme for power through marriage. But for one sharp-tongued daughter, securing a suitor is the least of her worries. When an ancient darkness seeps into the realm, her beloved younger brother falls victim to a deadly curse—one whispered to be the work of the northern witch.</p>
+                            <div class="hero-purchase-section">
+                                <div class="format-badges">
+                                    <span class="format-badge available"><i class="fas fa-check-circle"></i> Kindle</span>
+                                    <span class="format-badge available"><i class="fas fa-check-circle"></i> Paperback</span>
+                                    <span class="format-badge available"><i class="fas fa-check-circle"></i> Audiobook</span>
+                                </div>
+                                <div class="purchase-icons labeled">
+                                    <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" rel="noopener noreferrer" title="Amazon Kindle" onclick="trackPurchase('hero_kindle')"><i class="fab fa-amazon"></i> <span>Amazon</span></a>
+                                    <a href="https://www.audible.com/pd/B0GKQ4JNLR/?source_code=AUDFPWS0223189MWT-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_us" target="_blank" rel="noopener noreferrer" title="Audible" class="audible-link" onclick="trackPurchase('hero_audible')"><i class="fab fa-audible"></i> <span>Audible</span></a>
+                                    <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" rel="noopener noreferrer" title="Barnes &amp; Noble" onclick="trackPurchase('hero_barnes')"><i class="fas fa-book-open"></i> <span>Barnes &amp; Noble</span></a>
+                                    <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" rel="noopener noreferrer" title="Books-A-Million" onclick="trackPurchase('hero_bam')"><i class="fas fa-store"></i> <span>Books-A-Million</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="images/ABloodveiledDescent-Ebook.jpg" alt="A Bloodveiled Descent - Debut novel by Haley M. Opet">
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="hero-carousel-controls">
+                <button class="hero-carousel-arrow" id="hero-prev" aria-label="Previous slide">&#10094;</button>
+                <div class="hero-carousel-dots" id="hero-dots">
+                    <button class="hero-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                </div>
+                <button class="hero-carousel-arrow" id="hero-next" aria-label="Next slide">&#10095;</button>
             </div>
         </div>
     </section>
@@ -1749,83 +2105,62 @@
         </div>
     </section>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon-section">
+    <!-- The Solwyn Duology - the page's single purchase hub.
+         Keeps the established #where-to-buy anchor so the nav link, the
+         schema.org PublicationEvent URLs, and any inbound links still resolve. -->
+    <section id="where-to-buy" class="duology-section">
         <div class="container">
-            <div class="coming-soon-content">
-                <p class="coming-soon-label">The Solwyn Duology &mdash; Book Two</p>
-                <h2 class="coming-soon-title">A Sunwoven Ascent</h2>
-                <p class="coming-soon-author">by Haley M. Opet</p>
-                <p class="coming-soon-year">Coming 2026</p>
-                <div class="coming-soon-blurb">
-                    <p>Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet... home. A Sunwoven Ascent is a dark romantasy of love, power, and the cost of defying the life she was forced to live.</p>
-                </div>
-                <a href="#newsletter" class="btn btn-coming-soon">GET NOTIFIED WHEN IT RELEASES</a>
-            </div>
-        </div>
-    </section>
+            <p class="duology-eyebrow">The Complete Series</p>
+            <h2 class="duology-heading">The Solwyn Duology</h2>
 
-    <!-- Where to Buy Section -->
-    <section id="where-to-buy" class="where-to-buy-section">
-        <div class="container">
-            <div class="where-to-buy-content">
-                <h2 class="section-title">Where to Buy</h2>
-                
-                <div class="purchase-summary">
-                    <h3>Available Now!</h3>
-                    <div class="price-display">
-                        <div class="price-item">
-                            <div class="price-format">Kindle Edition</div>
-                            <div class="price-value">$4.99</div>
-                        </div>
-                        <div class="price-item">
-                            <div class="price-format">Paperback</div>
-                            <div class="price-value">$19.99</div>
-                        </div>
-                        <div class="price-item">
-                            <div class="price-format">Audiobook</div>
-                            <div class="price-value">$24.95</div>
-                        </div>
+            <div class="duology-grid">
+                <!-- Book One -->
+                <div class="duology-book">
+                    <img class="duology-cover" src="images/ABloodveiledDescent-Ebook.jpg" alt="A Bloodveiled Descent - Book One of The Solwyn Duology" loading="lazy">
+                    <p class="duology-book-num">Book One</p>
+                    <h3 class="duology-book-title">A Bloodveiled Descent</h3>
+                    <span class="duology-status available">Available Now</span>
+                    <ul class="duology-prices">
+                        <li><span class="fmt">Kindle</span><span class="amt">$4.99</span></li>
+                        <li><span class="fmt">Paperback</span><span class="amt">$19.99</span></li>
+                        <li><span class="fmt">Audiobook</span><span class="amt">$24.95</span></li>
+                    </ul>
+                    <p class="duology-label">Available from</p>
+                    <div class="duology-buys">
+                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" rel="noopener noreferrer" class="btn btn-amazon" onclick="trackPurchase('whereToBuy_kindle')">Kindle</a>
+                        <a href="https://www.amazon.com/dp/B0FT2PFQTF" target="_blank" rel="noopener noreferrer" class="btn btn-paperback" onclick="trackPurchase('whereToBuy_paperback')">Paperback</a>
+                        <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" rel="noopener noreferrer" class="btn btn-barnes" onclick="trackPurchase('whereToBuy_barnes')">Barnes &amp; Noble</a>
+                        <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" rel="noopener noreferrer" class="btn btn-bam" onclick="trackPurchase('whereToBuy_bam')">Books-A-Million</a>
+                        <a href="https://www.audible.com/pd/B0GKQ4JNLR/?source_code=AUDFPWS0223189MWT-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_us" target="_blank" rel="noopener noreferrer" class="btn btn-audible audible-link" onclick="trackPurchase('whereToBuy_audible')">Audible</a>
                     </div>
-                    <p style="margin: 0;">Get your copy of <em>A Bloodveiled Descent</em> from your favorite retailer!</p>
                 </div>
 
-                <div class="retailer-cards">
-                    <!-- Amazon Card -->
-                    <div class="retailer-card">
-                        <div class="retailer-logo amazon">
-                            <i class="fab fa-amazon"></i>
-                        </div>
-                        <h3 class="retailer-name">Amazon</h3>
-                        <a href="https://www.amazon.com/dp/B0FFX941T6" target="_blank" class="btn btn-amazon" onclick="trackPurchase('whereToBuy_kindle')">Kindle</a>
-                        <a href="https://www.amazon.com/dp/B0FT2PFQTF" target="_blank" class="btn btn-paperback" onclick="trackPurchase('whereToBuy_paperback')">Paperback</a>
+                <!-- Book Two -->
+                <div class="duology-book">
+                    <img class="duology-cover" src="images/ASunwovenAscent-Ebook.jpg" alt="A Sunwoven Ascent - Book Two of The Solwyn Duology" loading="lazy">
+                    <p class="duology-book-num">Book Two</p>
+                    <h3 class="duology-book-title">A Sunwoven Ascent</h3>
+                    <span class="duology-status preorder">Pre-Order</span>
+                    <p class="duology-meta">Releases August 31, 2026</p>
+                    <ul class="duology-prices">
+                        <li><span class="fmt">Kindle</span><span class="amt">$4.99</span></li>
+                        <li><span class="fmt">Signed Paperback</span><span class="amt">$19.99</span></li>
+                    </ul>
+                    <p class="duology-label">Signed paperback from indie shops</p>
+                    <div class="retailer-badges">
+                        <a href="https://www.flightoffantasybooks.com/shop/p/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Pre-order from Flight of Fantasy Book Shop" onclick="trackPurchase('preorderBook2_flightoffantasy')">
+                            <img src="images/retailers/flight-of-fantasy.png" alt="Flight of Fantasy Book Shop" loading="lazy">
+                        </a>
+                        <a href="https://www.thecraftybookstore.com/product-page/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Pre-order from The Crafty Bookstore" onclick="trackPurchase('preorderBook2_craftybookstore')">
+                            <img src="images/retailers/the-crafty-bookstore.png" alt="The Crafty Bookstore" loading="lazy">
+                        </a>
+                        <a href="https://thefatedchapterbookstore.com/products/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Pre-order from The Fated Chapter Bookstore" onclick="trackPurchase('preorderBook2_fatedchapter')">
+                            <img src="images/retailers/the-fated-chapter.png" alt="The Fated Chapter Bookstore" loading="lazy">
+                        </a>
                     </div>
-
-                    <!-- Barnes & Noble Card -->
-                    <div class="retailer-card">
-                        <div class="retailer-logo barnes">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <h3 class="retailer-name">Barnes & Noble</h3>
-                        <a href="https://www.barnesandnoble.com/w/a-bloodveiled-descent-haley-m-opet/1148562497" target="_blank" class="btn btn-barnes" onclick="trackPurchase('whereToBuy_barnes')">Paperback</a>
-                    </div>
-
-                    <!-- Books-A-Million Card -->
-                    <div class="retailer-card">
-                        <div class="retailer-logo bam">
-                            <i class="fas fa-book-reader"></i>
-                        </div>
-                        <h3 class="retailer-name">Books-A-Million</h3>
-                        <a href="https://www.booksamillion.com/p/Bloodveiled-Descent/Haley-M-Opet/9798999176905" target="_blank" class="btn btn-bam" onclick="trackPurchase('whereToBuy_bam')">Paperback</a>
-                    </div>
-
-                    <!-- Audible Card -->
-                    <div class="retailer-card">
-                        <div class="retailer-logo audible">
-                            <i class="fab fa-audible"></i>
-                        </div>
-                        <h3 class="retailer-name">Audible</h3>
-                        <a href="https://www.audible.com/pd/B0GKQ4JNLR/?source_code=AUDFPWS0223189MWT-BK-ACX0-493235&ref=acx_bty_BK_ACX0_493235_rh_us" target="_blank" class="btn btn-audible audible-link" onclick="trackPurchase('whereToBuy_audible')">Audiobook</a>
+                    <p class="duology-perk">Includes a signed bookplate &amp; bookish extras</p>
+                    <div class="duology-buys">
+                        <a href="https://www.amazon.com/Sunwoven-Ascent-Book-Solwyn-Duology-ebook/dp/B0H42W3FC1" target="_blank" rel="noopener noreferrer" class="btn btn-amazon" onclick="trackPurchase('preorderBook2_sunwovenkindle')"><i class="fab fa-amazon"></i>&nbsp; Kindle eBook</a>
                     </div>
                 </div>
             </div>
@@ -1954,6 +2289,69 @@
                 });
             });
         });
+
+        // Hero Carousel
+        (function () {
+            const carousel = document.getElementById('hero-carousel');
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll('.hero-slide'));
+            const dots = Array.from(document.querySelectorAll('#hero-dots .hero-dot'));
+            const prevBtn = document.getElementById('hero-prev');
+            const nextBtn = document.getElementById('hero-next');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const AUTO_ADVANCE_MS = 7000;
+
+            let current = 0;
+            let timer = null;
+
+            function goToSlide(index) {
+                current = (index + slides.length) % slides.length;
+                slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+            }
+
+            function startAutoAdvance() {
+                if (prefersReducedMotion || slides.length < 2) return;
+                stopAutoAdvance();
+                timer = setInterval(() => goToSlide(current + 1), AUTO_ADVANCE_MS);
+            }
+
+            function stopAutoAdvance() {
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+            }
+
+            function restartAutoAdvance() {
+                stopAutoAdvance();
+                startAutoAdvance();
+            }
+
+            prevBtn.addEventListener('click', () => {
+                goToSlide(current - 1);
+                restartAutoAdvance();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                goToSlide(current + 1);
+                restartAutoAdvance();
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    goToSlide(parseInt(dot.dataset.slide, 10));
+                    restartAutoAdvance();
+                });
+            });
+
+            carousel.addEventListener('mouseenter', stopAutoAdvance);
+            carousel.addEventListener('mouseleave', startAutoAdvance);
+
+            goToSlide(0);
+            startAutoAdvance();
+        })();
     </script>
     
     <script src="instagram_loader.js"></script>
