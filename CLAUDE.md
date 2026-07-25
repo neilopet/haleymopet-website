@@ -67,13 +67,23 @@ Author website for Haley M. Opet, promoting her debut novel "A Bloodveiled Desce
 ├── ANALYTICS_SETUP.md           # GA4 setup instructions
 ├── images/
 │   ├── ABloodveiledDescent-Ebook.jpg
+│   ├── ASunwovenAscent-Ebook.jpg
+│   ├── og-sunwoven-ascent.jpg   # 1200x630 social share card
 │   ├── haley-headshot-400.jpg
 │   ├── velvet-tea-press-logo-transparent.png
+│   ├── retailers/              # Indie bookshop logo badges
 │   └── instagram/              # Scraped Instagram images
 ├── instagram_posts.json         # Instagram data cache
 ├── instagram_loader.js          # Frontend Instagram loader
 ├── scrape_instagram.py          # Instagram scraper script
 ├── requirements.txt             # Python dependencies
+├── tools/                       # Manual asset prep - NOT run by deploy
+│   ├── README.md               # What each script does and why not in CI
+│   ├── optimize_images.py      # Resize/compress covers and logos
+│   ├── make_og_card.py         # Render the social share card
+│   ├── prep_retailer_logos.py  # Build bookshop badges from sources
+│   ├── requirements.txt        # Tooling deps (Pillow, playwright)
+│   └── logo-sources/           # Bookshop logo originals (CDN URLs rot)
 └── .github/workflows/
     ├── deploy.yml              # Deployment with GA4 injection
     └── update-instagram.yml     # Manual Instagram update
@@ -151,6 +161,22 @@ python3 -m http.server 8080
 python3 capture_screenshot.py  # Various devices
 python3 test_instagram_loader.py  # With server
 ```
+
+#### Add or Update Images
+```bash
+source venv/bin/activate
+pip install -r tools/requirements.txt
+
+python3 tools/optimize_images.py       # after adding any cover or logo
+python3 tools/make_og_card.py          # when the featured book changes
+python3 tools/prep_retailer_logos.py   # when a bookshop rebrands
+```
+Covers must be optimized before committing — raw exports run 5-8 MB against a
+400px render slot. These are manual steps by design; see `tools/README.md` for
+why they are kept out of the deploy workflow.
+
+> Resizing a cover means updating the matching schema.org `ImageObject`
+> width/height in `index.html`, or the structured data misdescribes the file.
 
 #### Configure Analytics
 1. Set `GA4_MEASUREMENT_ID` in GitHub repository secrets

@@ -1,0 +1,5 @@
+# Dependencies for the asset tools in this directory only.
+# The site itself is static and needs none of these at runtime; the Instagram
+# scraper's dependencies live in the top-level requirements.txt.
+Pillow==11.3.0
+playwright==1.40.0
