@@ -19,6 +19,7 @@ python -m playwright install chromium   # only needed for make_og_card.py
 | `optimize_images.py` | After adding any cover or logo | Resizes/compresses in place |
 | `make_og_card.py` | The featured book changes | `images/og-sunwoven-ascent.jpg` |
 | `prep_retailer_logos.py` | A bookshop rebrands, or badges get resized | `images/retailers/*.png` |
+| `prep_author_photo.py` | The author photo changes | `images/haley-headshot.jpg` |
 
 ### optimize_images.py
 
@@ -55,6 +56,20 @@ from Squarespace/Wix/Shopify CDNs whose hashed URLs will eventually rot. The
 original source URLs are recorded in the script.
 
 Run `optimize_images.py` afterwards to scale the badges to their final size.
+
+### prep_author_photo.py
+
+Crops and compresses the author headshot. The source is a landscape
+environmental portrait, so a centre-crop lands on the subject's shoulder --
+the crop boxes are chosen against the face position instead.
+
+The About photo is styled `border-radius: 50%`, so the visible area is the
+inscribed circle: a square crop renders a true circle, while a non-square one
+renders an ellipse. Two variants are defined; `--all` writes both for
+comparison without touching the live file.
+
+This emits a final optimized JPEG, so `optimize_images.py` deliberately skips
+it -- a second lossy pass would only degrade it.
 
 ## Why not in CI
 

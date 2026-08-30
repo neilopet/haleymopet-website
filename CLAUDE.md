@@ -82,8 +82,10 @@ Author website for Haley M. Opet, promoting her debut novel "A Bloodveiled Desce
 │   ├── optimize_images.py      # Resize/compress covers and logos
 │   ├── make_og_card.py         # Render the social share card
 │   ├── prep_retailer_logos.py  # Build bookshop badges from sources
+│   ├── prep_author_photo.py    # Crop/compress the author headshot
 │   ├── requirements.txt        # Tooling deps (Pillow, playwright)
-│   └── logo-sources/           # Bookshop logo originals (CDN URLs rot)
+│   ├── logo-sources/           # Bookshop logo originals (CDN URLs rot)
+│   └── photo-sources/          # Author photo originals
 └── .github/workflows/
     ├── deploy.yml              # Deployment with GA4 injection
     └── update-instagram.yml     # Manual Instagram update
@@ -170,6 +172,7 @@ pip install -r tools/requirements.txt
 python3 tools/optimize_images.py       # after adding any cover or logo
 python3 tools/make_og_card.py          # when the featured book changes
 python3 tools/prep_retailer_logos.py   # when a bookshop rebrands
+python3 tools/prep_author_photo.py     # when the author photo changes
 ```
 Covers must be optimized before committing — raw exports run 5-8 MB against a
 400px render slot. These are manual steps by design; see `tools/README.md` for

@@ -30,8 +30,8 @@ OUT = REPO / "images" / "og-sunwoven-ascent.jpg"
 EYEBROW = "The Solwyn Duology &mdash; Book Two"
 TITLE = "A Sunwoven Ascent"
 AUTHOR = "by Haley M. Opet"
-CALLOUT = "Pre-Order Now"
-SUBLINE = "Releases August 31, 2026"
+CALLOUT = "Available Now"
+SUBLINE = "Signed paperback &amp; Kindle editions"
 # ---------------------------------------------------------------------------
 
 WIDTH, HEIGHT = 1200, 630
