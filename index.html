@@ -7,7 +7,7 @@
     <meta name="description" content="The Solwyn Duology by Haley M. Opet. A Bloodveiled Descent and A Sunwoven Ascent - both books available now in Kindle, paperback, and audiobook. A dark fantasy romance of duty, magic, and forbidden love.">
     <meta name="keywords" content="A Bloodveiled Descent, A Sunwoven Ascent, Haley M. Opet, fantasy romance, dark fantasy, werewolf romance, The Solwyn Duology, romantasy">
     <meta property="og:title" content="A Sunwoven Ascent - Available Now | Haley M. Opet">
-    <meta property="og:description" content="Book Two of The Solwyn Duology. Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet... home. Available now in signed paperback and Kindle.">
+    <meta property="og:description" content="Book Two of The Solwyn Duology. Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet... home. Available now in paperback, Kindle, and audiobook.">
     <meta property="og:image" content="https://haleymopet.com/images/og-sunwoven-ascent.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="A Sunwoven Ascent - Available Now">
-    <meta name="twitter:description" content="Book Two of The Solwyn Duology by Haley M. Opet. Available now in signed paperback and Kindle.">
+    <meta name="twitter:description" content="Book Two of The Solwyn Duology by Haley M. Opet. Available now in paperback, Kindle, and audiobook.">
     <meta name="twitter:image" content="https://haleymopet.com/images/og-sunwoven-ascent.jpg">
     <style>
         :root {
@@ -1513,7 +1513,7 @@
           "@type": "Book",
           "@id": "https://haleymopet.com/#sunwoven-paperback-edition",
           "bookFormat": "https://schema.org/Paperback",
-          "name": "A Sunwoven Ascent (Signed Paperback)",
+          "name": "A Sunwoven Ascent (Paperback)",
           "author": {
             "@id": "https://haleymopet.com/#person"
           },
@@ -1533,38 +1533,37 @@
                 "@type": "Organization",
                 "name": "Amazon"
               }
-            },
+            }
+          ]
+        },
+        {
+          "@type": "Book",
+          "@id": "https://haleymopet.com/#sunwoven-audiobook-edition",
+          "bookFormat": "https://schema.org/AudiobookFormat",
+          "name": "A Sunwoven Ascent (Audiobook)",
+          "author": {
+            "@id": "https://haleymopet.com/#person"
+          },
+          "publisher": {
+            "@id": "https://haleymopet.com/#publisher"
+          },
+          "readBy": {
+            "@type": "Person",
+            "name": "Susanna Lloyd"
+          },
+          "duration": "PT15H56M",
+          "datePublished": "2026-11-24",
+          "inLanguage": "en",
+          "offers": [
             {
               "@type": "Offer",
-              "price": "19.99",
+              "price": "24.99",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.flightoffantasybooks.com/shop/p/a-sunwoven-ascent",
+              "url": "https://www.audible.com/pd/B0HSQPFDPF",
               "seller": {
                 "@type": "Organization",
-                "name": "Flight of Fantasy Book Shop"
-              }
-            },
-            {
-              "@type": "Offer",
-              "price": "19.99",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.thecraftybookstore.com/product-page/a-sunwoven-ascent",
-              "seller": {
-                "@type": "Organization",
-                "name": "The Crafty Bookstore"
-              }
-            },
-            {
-              "@type": "Offer",
-              "price": "19.99",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "url": "https://thefatedchapterbookstore.com/products/a-sunwoven-ascent",
-              "seller": {
-                "@type": "Organization",
-                "name": "The Fated Chapter Bookstore"
+                "name": "Audible"
               }
             }
           ]
@@ -1924,25 +1923,11 @@
                     price = 19.99;
                     bookTitle = 'A Sunwoven Ascent';
                     break;
-                case 'flightoffantasy':
-                    retailer = 'Flight of Fantasy Books';
-                    format = 'Paperback';
-                    itemId = 'flight-of-fantasy-books';
-                    price = 19.99;
-                    bookTitle = 'A Sunwoven Ascent';
-                    break;
-                case 'craftybookstore':
-                    retailer = 'The Crafty Bookstore';
-                    format = 'Paperback';
-                    itemId = 'the-crafty-bookstore';
-                    price = 19.99;
-                    bookTitle = 'A Sunwoven Ascent';
-                    break;
-                case 'fatedchapter':
-                    retailer = 'The Fated Chapter';
-                    format = 'Paperback';
-                    itemId = 'the-fated-chapter';
-                    price = 19.99;
+                case 'sunwovenaudiobook':
+                    retailer = 'Audible';
+                    format = 'Audiobook';
+                    itemId = 'B0HSQPFDPF';
+                    price = 24.99;
                     bookTitle = 'A Sunwoven Ascent';
                     break;
             }
@@ -2038,22 +2023,11 @@
                             <p class="hero-subtitle">Bound to an alpha and reshaped by magic, Evelyne Duskwood faces the most dangerous journey yet... home.</p>
                             <p>A dark romantasy of love, power, and the cost of defying the life she was forced to live. The conclusion of The Solwyn Duology.</p>
                             <div class="hero-purchase-section">
-                                <p class="purchase-label">Signed Paperback &mdash; $19.99</p>
-                                <div class="retailer-badges">
-                                    <a href="https://www.flightoffantasybooks.com/shop/p/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Buy from Flight of Fantasy Book Shop" onclick="trackPurchase('heroBook2_flightoffantasy')">
-                                        <img src="images/retailers/flight-of-fantasy.png" alt="Flight of Fantasy Book Shop" loading="lazy">
-                                    </a>
-                                    <a href="https://www.thecraftybookstore.com/product-page/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Buy from The Crafty Bookstore" onclick="trackPurchase('heroBook2_craftybookstore')">
-                                        <img src="images/retailers/the-crafty-bookstore.png" alt="The Crafty Bookstore" loading="lazy">
-                                    </a>
-                                    <a href="https://thefatedchapterbookstore.com/products/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Buy from The Fated Chapter Bookstore" onclick="trackPurchase('heroBook2_fatedchapter')">
-                                        <img src="images/retailers/the-fated-chapter.png" alt="The Fated Chapter Bookstore" loading="lazy">
-                                    </a>
-                                </div>
-                                <p class="perk-note"><i class="fas fa-gift"></i>Signed copies from indie shops include a bookplate &amp; bookish extras</p>
+                                <p class="purchase-label">Kindle, paperback &amp; audiobook</p>
                                 <div class="hero-buttons">
                                     <a href="https://www.amazon.com/Sunwoven-Ascent-Book-Solwyn-Duology-ebook/dp/B0H42W3FC1" target="_blank" rel="noopener noreferrer" class="btn btn-amazon" onclick="trackPurchase('heroBook2_sunwovenkindle')"><i class="fab fa-amazon"></i>&nbsp; Kindle eBook &mdash; $4.99</a>
                                     <a href="https://www.amazon.com/dp/B0HC9B5KRD" target="_blank" rel="noopener noreferrer" class="btn btn-paperback" onclick="trackPurchase('heroBook2_sunwovenpaperback')"><i class="fab fa-amazon"></i>&nbsp; Amazon Paperback &mdash; $19.99</a>
+                                    <a href="https://www.audible.com/pd/B0HSQPFDPF" target="_blank" rel="noopener noreferrer" class="btn btn-audible" onclick="trackPurchase('heroBook2_sunwovenaudiobook')"><i class="fab fa-audible"></i>&nbsp; Audible Audiobook &mdash; $24.99</a>
                                 </div>
                             </div>
                         </div>
@@ -2137,7 +2111,7 @@
                     <ul class="duology-prices">
                         <li><span class="fmt">Kindle</span><span class="amt">$4.99</span></li>
                         <li><span class="fmt">Paperback</span><span class="amt">$19.99</span></li>
-                        <li><span class="fmt">Audiobook</span><span class="amt">$24.95</span></li>
+                        <li><span class="fmt">Audiobook</span><span class="amt">$24.99</span></li>
                     </ul>
                     <p class="duology-label">Available from</p>
                     <div class="duology-buys">
@@ -2157,24 +2131,13 @@
                     <span class="duology-status available">Available Now</span>
                     <ul class="duology-prices">
                         <li><span class="fmt">Kindle</span><span class="amt">$4.99</span></li>
-                        <li><span class="fmt">Signed Paperback</span><span class="amt">$19.99</span></li>
+                        <li><span class="fmt">Paperback</span><span class="amt">$19.99</span></li>
+                        <li><span class="fmt">Audiobook</span><span class="amt">$24.99</span></li>
                     </ul>
-                    <p class="duology-label">Signed paperback from indie shops</p>
-                    <div class="retailer-badges">
-                        <a href="https://www.flightoffantasybooks.com/shop/p/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Buy from Flight of Fantasy Book Shop" onclick="trackPurchase('duologyBook2_flightoffantasy')">
-                            <img src="images/retailers/flight-of-fantasy.png" alt="Flight of Fantasy Book Shop" loading="lazy">
-                        </a>
-                        <a href="https://www.thecraftybookstore.com/product-page/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Buy from The Crafty Bookstore" onclick="trackPurchase('duologyBook2_craftybookstore')">
-                            <img src="images/retailers/the-crafty-bookstore.png" alt="The Crafty Bookstore" loading="lazy">
-                        </a>
-                        <a href="https://thefatedchapterbookstore.com/products/a-sunwoven-ascent" target="_blank" rel="noopener noreferrer" class="retailer-badge" title="Buy from The Fated Chapter Bookstore" onclick="trackPurchase('duologyBook2_fatedchapter')">
-                            <img src="images/retailers/the-fated-chapter.png" alt="The Fated Chapter Bookstore" loading="lazy">
-                        </a>
-                    </div>
-                    <p class="duology-perk">Signed copies include a bookplate &amp; bookish extras</p>
                     <div class="duology-buys">
                         <a href="https://www.amazon.com/Sunwoven-Ascent-Book-Solwyn-Duology-ebook/dp/B0H42W3FC1" target="_blank" rel="noopener noreferrer" class="btn btn-amazon" onclick="trackPurchase('duologyBook2_sunwovenkindle')"><i class="fab fa-amazon"></i>&nbsp; Kindle eBook</a>
                         <a href="https://www.amazon.com/dp/B0HC9B5KRD" target="_blank" rel="noopener noreferrer" class="btn btn-paperback" onclick="trackPurchase('duologyBook2_sunwovenpaperback')"><i class="fab fa-amazon"></i>&nbsp; Paperback</a>
+                        <a href="https://www.audible.com/pd/B0HSQPFDPF" target="_blank" rel="noopener noreferrer" class="btn btn-audible" onclick="trackPurchase('duologyBook2_sunwovenaudiobook')"><i class="fab fa-audible"></i>&nbsp; Audiobook</a>
                     </div>
                 </div>
             </div>

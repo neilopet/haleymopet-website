@@ -31,7 +31,7 @@ EYEBROW = "The Solwyn Duology &mdash; Book Two"
 TITLE = "A Sunwoven Ascent"
 AUTHOR = "by Haley M. Opet"
 CALLOUT = "Available Now"
-SUBLINE = "Signed paperback &amp; Kindle editions"
+SUBLINE = "Paperback, Kindle &amp; audiobook editions"
 # ---------------------------------------------------------------------------
 
 WIDTH, HEIGHT = 1200, 630
